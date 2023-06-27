@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'johndoe@example.com',
             'password' => bcrypt('password'),
         ]);
-        $user->createToken('api-token');
+        $result = $user->createToken('api-token')->plainTextToken;
+        echo("Sample user ID and token created: " . $result);
 
     }
 }
